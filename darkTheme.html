@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        :root {
+            --main: #333;
+            --main-rgb: 51,51,51;
+            color-scheme: light;
+        }
+            body {
+  color: var(--main);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  text-align: left;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  font-family: Montserrat;
+  color: var(--main);
+  background-color: var(--white);
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1770px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
+}
+
+@media (min-width: 451px) {
+  .container {
+    padding: 0px 50px;
+  }
+}
+@media (min-width: 1101px) {
+  .container {
+    padding: 0px 80px;
+  }
+}
+.btn {
+    border: 1px solid black;
+    padding: 20px 30px
+}
+form {
+    background-color: rgb(var(--main-rgb), 20%);
+}
+input, 
+textarea,
+button {
+    border: 1px solid black;
+    padding: 20px 30px;
+    color: var(--main);
+}
+/* dark*/
+.dark {
+    --main: #fff;
+    --main-rgb: 255, 255, 255 ;
+    color-scheme: dark;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn" id="btn">
+            Перейти на темную тему
+        </button>
+        <h1 class="header">
+            Lorem ipsum, dolor sit amet consectetur 
+        </h1>
+        <p class="description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium quos harum, dolorem hic porro repudiandae odit, alias dolore rerum quae similique nobis voluptas aut eveniet nostrum maxime distinctio at autem.
+            Id, voluptatibus possimus sequi repellat reiciendis ipsa minima, quo eligendi dicta eaque nemo ratione, nulla explicabo officia dignissimos doloribus quibusdam laborum ad nisi fugiat numquam! Totam eum ex reprehenderit voluptas!
+            Dolorum a illum, eum ipsa modi vel rerum, beatae itaque molestiae placeat, porro laborum architecto suscipit fugiat ducimus amet? Iure facilis delectus ad odio ea officiis rem aspernatur eaque possimus!
+        </p>
+        <form>
+            <input type="email" placeholder="Ваш Email*">
+            <input type="checkbox" name="" id="checkbox">
+            <label for="checkbox">Checkbox</label>
+            <input type="radio" id="radio">
+            <label for="radio">Radio</label>
+            <textarea name="textarea" id="" cols="30" rows="10" placeholder="Добавьте комментарий!"></textarea>
+        </form>
+        <input type="number" id="goods">
+        <div><button id="add">
+          push
+        </button>
+        <button id="delete">
+          pop
+        </button></div>
+    </div>
+    <script>
+        let root = document.querySelector(':root')
+let btn = document.querySelector('#btn')
+        btn.addEventListener("click", () => {
+            event.preventDefault()
+            root.classList.toggle('dark')
+            if ( btn.textContent === "Перейти на темную тему") {
+            btn.textContent === "Перейти на светлую тему" 
+            } else {
+                btn.textContent === "Перейти на темную тему"
+            }
+        })
+
+
+        let a = document.querySelector('add')
+        let b = document.querySelector('delete')
+        let goods = document.querySelector('#goods')
+        let car = []
+       let c = a.addEventListener('click', function() {
+          a = +goods.value
+          if (!car.includes(a)) {
+            car.push(a)
+          }
+          console.log(car)
+        })
+      let d = b.addEventListener('click', function() {
+          b = +goods.value
+          if (car.includes(b)) {
+            car.pop(b)
+          }
+          console.log(car)
+        })
+       // let car = []
+       // document.querySelector('.add').onclick = () => {
+       //   let a = +document.querySelector('#goods').value
+       //   if (!car.includes(a)) {
+       //     car.push(a)
+       //   }
+       //   console.log(car)
+       // }
+       // document.querySelector('.delete').onclick = () => {
+       //   let b = +document.querySelector('#goods')
+       //   if (car.includes(b)) {
+       //     car.pop(b)          
+       //   }
+       //   console.log(car)
+       // }
+
+    </script>
+</body>
+</html>
